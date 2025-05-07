@@ -1,38 +1,40 @@
 verificador_unidade = 0
 verificador_dezena = 0
 cpf = input("Imforme o CPF: ")
-digito1 = cpf[0:1]
-digito2 = cpf[1:2]
-digito3 = cpf[2:3]
-digito4 = cpf[3:4]
-digito5 = cpf[4:5]
-digito6 = cpf[5:6]
-digito7 = cpf[6:7]
-digito8 = cpf[7:8]
-digito9 = cpf[8:9]
-digito10 = cpf[9:10]
-digito11 = cpf[10:11]
+digito = []
+digito.append(cpf[0:1])
+digito.append(cpf[1:2])
+digito.append(cpf[2:3])
+digito.append(cpf[3:4])
+digito.append(cpf[4:5])
+digito.append(cpf[5:6])
+digito.append(cpf[6:7])
+digito.append(cpf[7:8])
+digito.append(cpf[8:9])
+digito.append(cpf[9:10])
+digito.append(cpf[10:11])
 
-numero01 = int(digito1)
-numero02 = int(digito2)
-numero03 = int(digito3)
-numero04 = int(digito4)
-numero05 = int(digito5)
-numero06 = int(digito6)
-numero07 = int(digito7)
-numero08 = int(digito8)
-numero09 = int(digito9)
-numero10 = int(digito10)
-numero11 = int(digito11) 
-resto_div_digito1 = ((numero01 * 10) + (numero02 * 9) + (numero03 * 8) + (numero04 * 7) + (numero05 * 6) + (numero06 * 5) + (numero07 * 4) + (numero08 * 3) + (numero09 * 2)) % 11
+numero = []
+numero.append(int(digito[0]))
+numero.append(int(digito[1]))
+numero.append(int(digito[2]))
+numero.append(int(digito[3]))
+numero.append(int(digito[4]))
+numero.append(int(digito[5]))
+numero.append(int(digito[6]))
+numero.append(int(digito[7]))
+numero.append(int(digito[8]))
+numero.append(int(digito[9]))
+numero.append(int(digito[-1]))
+resto_div_digito1 = ((numero[0] * 10) + (numero[1] * 9) + (numero[2] * 8) + (numero[3] * 7) + (numero[4] * 6) + (numero[5] * 5) + (numero[6] * 4) + (numero[7] * 3) + (numero[8] * 2)) % 11
 if resto_div_digito1 == 0 or resto_div_digito1 == 1:
     verificador_dezena = 0 
 else:
     verificador_dezena = 11 - resto_div_digito1
-resto_div_digito2 = ((numero01 * 11) + (numero02 * 10) + (numero03 * 9) + (numero04 * 8) + (numero05 * 7) + (numero06 * 6) + (numero07 * 5) + (numero08 * 4) +(numero09 * 3) + (verificador_dezena * 2)) % 11
+resto_div_digito2 = ((numero[0] * 11) + (numero[1] * 10) + (numero[2] * 9) + (numero[3] * 8) + (numero[4] * 7) + (numero[5] * 6) + (numero[6] * 5) + (numero[7] * 4) +(numero[8] * 3) + (verificador_dezena * 2)) % 11
 if resto_div_digito2 == 0 or resto_div_digito2 == 1:
     verificador_unidade = 0 
 else:
     verificador_unidade = 11 - resto_div_digito2
-if verificador_dezena == numero10 and verificador_unidade == numero11:
+if verificador_dezena == numero[9] and verificador_unidade == numero[-1]:
     print(f'O CPF do usuario ({cpf}) é valido.')
