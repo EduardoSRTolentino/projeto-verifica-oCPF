@@ -23,7 +23,7 @@ numero07 = int(digito7)
 numero08 = int(digito8)
 numero09 = int(digito9)
 numero10 = int(digito10)
-numero11 = int(digito11)
+numero11 = int(digito11) 
 resto_div_digito1 = ((numero01 * 10) + (numero02 * 9) + (numero03 * 8) + (numero04 * 7) + (numero05 * 6) + (numero06 * 5) + (numero07 * 4) + (numero08 * 3) + (numero09 * 2)) % 11
 if resto_div_digito1 == 0 or resto_div_digito1 == 1:
     verificador_dezena = 0 
@@ -34,3 +34,5 @@ if resto_div_digito2 == 0 or resto_div_digito2 == 1:
     verificador_unidade = 0 
 else:
     verificador_unidade = 11 - resto_div_digito2
+if verificador_dezena == numero10 and verificador_unidade == numero11:
+    print(f'O CPF do usuario ({cpf}) é valido.')
